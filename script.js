@@ -6,11 +6,13 @@ function allCountry() {
     });
 }
 allCountry();
-function countryList(country) {
+// Jhankar has used forEach instead of for loop
+// function countryList(country)
+
+countryList = country =>{
   const allCountries = document.getElementById("all-country");
   for (let i = 0; i < country.length; i++) {
     const singleCountry = country[i];
-    // console.log(singleCountry.name);
     const countryDiv = document.createElement("div");
     countryDiv.className = 'country-style';
     // const h3 = document.createElement("h3");
@@ -27,6 +29,7 @@ function countryList(country) {
         <h3 class="cName">${singleCountry.name}</h3>
         <p>${singleCountry.capital}</p>
         <p>${singleCountry.population}</p>
+        <button>Show details</button>
     `;
     countryDiv.innerHTML = countryInfo;
     allCountries.appendChild(countryDiv);
